@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AvtoElan - Maşın Alqı-Satqısı</title>
+    <title>TelefonBazar - Telefon və Aksesuarlar</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -14,14 +14,15 @@
     <header>
       <div class="container">
         <div class="logo">
-          <h1>AvtoElan</h1>
-          <p>Ən yaxşı maşın təklifləri</p>
+          <h1>TelefonBazar</h1>
+          <p>Ən yaxşı telefon və aksesuar təklifləri</p>
         </div>
         <nav>
           <ul>
             <li><a href="#home" class="active">Əsas səhifə</a></li>
             <li><a href="#brands">Markalar</a></li>
-            <li><a href="#featured-cars">Elanlar</a></li>
+            <li><a href="#products">Məhsullar</a></li>
+            <li><a href="#accessories">Aksesuarlar</a></li>
             <li><a href="#contact">Əlaqə</a></li>
             <li><a href="#" class="btn-login" id="login-btn">Daxil ol</a></li>
           </ul>
@@ -29,6 +30,24 @@
             <i class="fas fa-bars"></i>
           </div>
         </nav>
+        <div class="header-icons">
+          <div class="search-container">
+            <button id="search-btn"><i class="fas fa-search"></i></button>
+            <div class="search-panel">
+              <input
+                type="text"
+                id="search-input"
+                placeholder="Axtarış... (məs: iPhone 13 qılıf)"
+              />
+              <button id="close-search"><i class="fas fa-times"></i></button>
+              <div class="search-results"></div>
+            </div>
+          </div>
+          <a href="#" class="cart-icon"
+            ><i class="fas fa-shopping-cart"></i
+            ><span class="cart-count">0</span></a
+          >
+        </div>
       </div>
     </header>
 
@@ -89,38 +108,47 @@
 
     <section class="hero" id="home">
       <div class="container">
-        <h2>Yeni və işlənmiş maşınlar</h2>
-        <p>Üstün keyfiyyətli maşınlar ən yaxşı qiymətlərlə</p>
-        <a href="#featured-cars" class="btn">Bütün elanlar</a>
-      </div>
-    </section>
-
-    <section class="search-section">
-      <div class="container">
-        <div class="search-box">
-          <input
-            type="text"
-            id="search-input"
-            placeholder="Maşın markası və ya modeli axtar..."
-          />
-          <button id="search-btn"><i class="fas fa-search"></i> Axtar</button>
-        </div>
+        <h2>Yeni və işlənmiş telefonlar</h2>
+        <p>Premium aksesuarlar ən yaxşı qiymətlərlə</p>
+        <a href="#products" class="btn">Bütün məhsullar</a>
       </div>
     </section>
 
     <section class="brands" id="brands">
       <div class="container">
-        <h2>Populyar Markalar</h2>
+        <h2>Populyar Telefon Markaları</h2>
         <div class="brands-grid">
           <!-- JavaScript ilə doldurulacaq -->
         </div>
       </div>
     </section>
 
-    <section class="featured-cars" id="featured-cars">
+    <section class="products" id="products">
       <div class="container">
-        <h2>Önə Çıxan Elanlar</h2>
-        <div class="cars-grid" id="featured-cars-grid">
+        <h2>Ən Son Telefonlar</h2>
+        <div class="products-grid" id="products-grid">
+          <!-- JavaScript ilə doldurulacaq -->
+        </div>
+      </div>
+    </section>
+
+    <section class="accessories" id="accessories">
+      <div class="container">
+        <h2>Telefon Aksesuarları</h2>
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">Hamısı</button>
+          <button class="filter-btn" data-filter="case">Qılıflar</button>
+          <button class="filter-btn" data-filter="charger">
+            Şarj cihazları
+          </button>
+          <button class="filter-btn" data-filter="headphone">
+            Qulaqlıqlar
+          </button>
+          <button class="filter-btn" data-filter="screen">
+            Ekran qoruyucular
+          </button>
+        </div>
+        <div class="accessories-grid" id="accessories-grid">
           <!-- JavaScript ilə doldurulacaq -->
         </div>
       </div>
@@ -142,7 +170,7 @@
           <div class="contact-info">
             <p><i class="fas fa-map-marker-alt"></i> Bakı, Azərbaycan</p>
             <p><i class="fas fa-phone"></i> +994 12 345 67 89</p>
-            <p><i class="fas fa-envelope"></i> info@avtoelan.az</p>
+            <p><i class="fas fa-envelope"></i> info@telefonbazar.az</p>
           </div>
           <div class="contact-form">
             <form>
@@ -166,10 +194,10 @@
       <div class="container">
         <div class="footer-content">
           <div class="footer-section">
-            <h3>AvtoElan</h3>
+            <h3>TelefonBazar</h3>
             <p>
-              Ən yaxşı maşın təklifləri bir yerdə. Yeni və işlənmiş maşınlar
-              üçün ən etibarlı platforma.
+              Ən yaxşı telefon və aksesuar təklifləri bir yerdə. Yeni və
+              işlənmiş telefonlar üçün ən etibarlı platforma.
             </p>
           </div>
           <div class="footer-section">
@@ -177,7 +205,8 @@
             <ul>
               <li><a href="#home">Əsas səhifə</a></li>
               <li><a href="#brands">Markalar</a></li>
-              <li><a href="#featured-cars">Elanlar</a></li>
+              <li><a href="#products">Məhsullar</a></li>
+              <li><a href="#accessories">Aksesuarlar</a></li>
               <li><a href="#contact">Əlaqə</a></li>
             </ul>
           </div>
@@ -185,12 +214,12 @@
             <h3>Əlaqə</h3>
             <p><i class="fas fa-map-marker-alt"></i> Bakı, Azərbaycan</p>
             <p><i class="fas fa-phone"></i> +994 12 345 67 89</p>
-            <p><i class="fas fa-envelope"></i> info@avtoelan.az</p>
+            <p><i class="fas fa-envelope"></i> info@telefonbazar.az</p>
           </div>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2023 AvtoElan. Bütün hüquqlar qorunur.</p>
+        <p>&copy; 2023 TelefonBazar. Bütün hüquqlar qorunur.</p>
       </div>
     </footer>
 

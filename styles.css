@@ -10,6 +10,7 @@ body {
   background-color: #f5f5f5;
   color: #333;
   line-height: 1.6;
+  scroll-behavior: smooth;
 }
 
 .container {
@@ -26,22 +27,40 @@ a {
 
 .btn {
   display: inline-block;
-  padding: 10px 20px;
-  background-color: #2c3e50;
+  padding: 12px 25px;
+  background-color: #3498db;
   color: white;
   border-radius: 5px;
   transition: all 0.3s ease;
   border: none;
   cursor: pointer;
+  font-size: 16px;
 }
 
 .btn:hover {
-  background-color: #1a252f;
+  background-color: #2980b9;
   transform: translateY(-2px);
 }
 
 section {
   padding: 80px 0;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 32px;
+  color: #2c3e50;
+  position: relative;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: #3498db;
+  margin: 15px auto;
 }
 
 /* Header */
@@ -120,6 +139,146 @@ nav ul li a.active::after {
   display: none;
   font-size: 24px;
   cursor: pointer;
+}
+
+/* Header icons */
+.header-icons {
+  display: flex;
+  align-items: center;
+}
+
+.header-icons a {
+  color: #333;
+  margin-left: 15px;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.header-icons a:hover {
+  color: #3498db;
+}
+
+.cart-icon {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #e74c3c;
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Axtarış paneli */
+.search-container {
+  position: relative;
+}
+
+#search-btn {
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+#search-btn:hover {
+  color: #3498db;
+}
+
+.search-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  padding: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1001;
+  display: none;
+  flex-direction: column;
+}
+
+.search-panel.active {
+  display: flex;
+}
+
+#search-input {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#close-search {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #777;
+  cursor: pointer;
+}
+
+.search-results {
+  max-width: 800px;
+  width: 100%;
+  margin: 15px auto 0;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  max-height: 400px;
+  overflow-y: auto;
+  display: none;
+}
+
+.search-results.active {
+  display: block;
+}
+
+.search-result-item {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.search-result-item:hover {
+  background: #f9f9f9;
+}
+
+.search-result-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 15px;
+  border-radius: 5px;
+}
+
+.search-result-info h4 {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.search-result-info p {
+  font-size: 0.9rem;
+  color: #777;
 }
 
 /* Modal */
@@ -202,7 +361,7 @@ nav ul li a.active::after {
 /* Hero section */
 .hero {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("https://images.unsplash.com/photo-1494976388531-d1058494cdd8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
+    url("https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
   background-size: cover;
   background-position: center;
   height: 500px;
@@ -216,6 +375,7 @@ nav ul li a.active::after {
 .hero h2 {
   font-size: 48px;
   margin-bottom: 20px;
+  color: white;
 }
 
 .hero p {
@@ -223,52 +383,10 @@ nav ul li a.active::after {
   margin-bottom: 30px;
 }
 
-/* Search section */
-.search-section {
-  padding: 30px 0;
-  background-color: #2c3e50;
-  color: white;
-}
-
-.search-box {
-  display: flex;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.search-box input {
-  flex: 1;
-  padding: 15px;
-  border: none;
-  border-radius: 5px 0 0 5px;
-  font-size: 16px;
-}
-
-.search-box button {
-  padding: 15px 25px;
-  background-color: #3498db;
-  color: white;
-  border: none;
-  border-radius: 0 5px 5px 0;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s;
-}
-
-.search-box button:hover {
-  background-color: #2980b9;
-}
-
 /* Brands section */
 .brands {
   padding: 50px 0;
   text-align: center;
-}
-
-.brands h2 {
-  margin-bottom: 30px;
-  font-size: 32px;
-  color: #2c3e50;
 }
 
 .brands-grid {
@@ -296,6 +414,14 @@ nav ul li a.active::after {
   height: 60px;
   object-fit: contain;
   margin-bottom: 10px;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s;
+}
+
+.brand-item:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
 }
 
 .brand-item p {
@@ -303,26 +429,19 @@ nav ul li a.active::after {
   color: #2c3e50;
 }
 
-/* Featured cars */
-.featured-cars {
+/* Products section */
+.products {
   padding: 50px 0;
   background-color: #ecf0f1;
 }
 
-.featured-cars h2 {
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 32px;
-  color: #2c3e50;
-}
-
-.cars-grid {
+.products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 30px;
 }
 
-.car-card {
+.product-card {
   background-color: white;
   border-radius: 10px;
   overflow: hidden;
@@ -330,50 +449,50 @@ nav ul li a.active::after {
   transition: transform 0.3s;
 }
 
-.car-card:hover {
+.product-card:hover {
   transform: translateY(-5px);
 }
 
-.car-image {
+.product-image {
   height: 200px;
   overflow: hidden;
 }
 
-.car-image img {
+.product-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s;
 }
 
-.car-card:hover .car-image img {
+.product-card:hover .product-image img {
   transform: scale(1.05);
 }
 
-.car-info {
+.product-info {
   padding: 20px;
 }
 
-.car-info h3 {
+.product-info h3 {
   font-size: 20px;
   margin-bottom: 10px;
   color: #2c3e50;
 }
 
-.car-details {
+.product-details {
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
   color: #7f8c8d;
 }
 
-.car-price {
+.product-price {
   font-size: 22px;
   font-weight: bold;
   color: #e74c3c;
 }
 
-.car-btn {
+.product-btn {
   display: block;
   text-align: center;
   padding: 10px;
@@ -384,21 +503,118 @@ nav ul li a.active::after {
   transition: background-color 0.3s;
 }
 
-.car-btn:hover {
+.product-btn:hover {
   background-color: #2980b9;
+}
+
+/* Accessories section */
+.accessories {
+  padding: 50px 0;
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.filter-btn {
+  padding: 8px 15px;
+  background: #ddd;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: #3498db;
+  color: white;
+}
+
+.accessories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.accessory-card {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.accessory-card:hover {
+  transform: translateY(-5px);
+}
+
+.accessory-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.accessory-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.accessory-card:hover .accessory-image img {
+  transform: scale(1.05);
+}
+
+.accessory-info {
+  padding: 20px;
+}
+
+.accessory-info h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.accessory-info p {
+  color: #7f8c8d;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.accessory-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #e74c3c;
+}
+
+.add-to-cart {
+  background: #2c3e50;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.add-to-cart:hover {
+  background: #3498db;
 }
 
 /* Search results */
 .search-results {
   padding: 50px 0;
   display: none;
-}
-
-.search-results h2 {
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 32px;
-  color: #2c3e50;
 }
 
 .results-grid {
@@ -418,8 +634,6 @@ nav ul li a.active::after {
 .contact h2 {
   text-align: center;
   margin-bottom: 30px;
-  font-size: 32px;
-  color: #2c3e50;
 }
 
 .contact-content {
@@ -502,6 +716,116 @@ footer {
   background-color: #1a252f;
 }
 
+/* Ətraflı məlumat modalı */
+.detail-modal {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.detail-modal .modal-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.detail-modal h2 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.product-detail-image {
+  width: 100%;
+  height: 300px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.product-detail-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-detail-info {
+  margin-bottom: 20px;
+}
+
+.product-detail-info p {
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.product-detail-info p strong {
+  color: #2c3e50;
+}
+
+.close-detail-modal {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #7f8c8d;
+}
+
+.contact-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+/* Bildirim stilləri */
+.alert {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #4caf50;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  z-index: 1000;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.5s, fadeOut 0.5s 2.5s;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 /* Responsive design */
 @media (max-width: 992px) {
   .hero h2 {
@@ -550,20 +874,6 @@ footer {
     font-size: 16px;
   }
 
-  .search-box {
-    flex-direction: column;
-  }
-
-  .search-box input {
-    border-radius: 5px;
-    margin-bottom: 10px;
-  }
-
-  .search-box button {
-    border-radius: 5px;
-    width: 100%;
-  }
-
   .brands-grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -585,80 +895,9 @@ footer {
   .contact-content {
     grid-template-columns: 1fr;
   }
-}
 
-/* Ətraflı məlumat modalı */
-.detail-modal {
-  display: flex;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 2000;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-
-.detail-modal .modal-content {
-  background-color: white;
-  padding: 30px;
-  border-radius: 10px;
-  width: 100%;
-  max-width: 800px;
-  max-height: 90vh;
-  overflow-y: auto;
-  position: relative;
-}
-
-.detail-modal h2 {
-  color: #2c3e50;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.car-detail-image {
-  width: 100%;
-  height: 300px;
-  margin-bottom: 20px;
-  overflow: hidden;
-  border-radius: 8px;
-}
-
-.car-detail-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.car-detail-info {
-  margin-bottom: 20px;
-}
-
-.car-detail-info p {
-  margin-bottom: 10px;
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-.car-detail-info p strong {
-  color: #2c3e50;
-}
-
-.close-detail-modal {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  font-size: 24px;
-  cursor: pointer;
-  color: #7f8c8d;
-}
-
-.contact-btn {
-  width: 100%;
-  padding: 12px;
-  font-size: 16px;
-  margin-top: 20px;
+  .filter-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
 }

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="az">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AvtoElan - Maşın Alqı-Satqısı</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <h1>AvtoElan</h1>
+          <p>Ən yaxşı maşın təklifləri</p>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#home" class="active">Əsas səhifə</a></li>
+            <li><a href="#brands">Markalar</a></li>
+            <li><a href="#featured-cars">Elanlar</a></li>
+            <li><a href="#contact">Əlaqə</a></li>
+            <li><a href="#" class="btn-login" id="login-btn">Daxil ol</a></li>
+          </ul>
+          <div class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Daxil ol formu -->
+    <div class="login-modal" id="login-modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Daxil ol</h2>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" required />
+          </div>
+          <div class="form-group">
+            <label for="password">Şifrə</label>
+            <input type="password" id="password" required />
+          </div>
+          <button type="submit" class="btn">Daxil ol</button>
+        </form>
+        <div class="form-footer">
+          <p>
+            Hesabınız yoxdur?
+            <a href="#" id="register-link">Qeydiyyatdan keçin</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Qeydiyyat formu -->
+    <div class="register-modal" id="register-modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Qeydiyyat</h2>
+        <form id="register-form">
+          <div class="form-group">
+            <label for="fullname">Ad Soyad</label>
+            <input type="text" id="fullname" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Telefon</label>
+            <input type="tel" id="phone" required />
+          </div>
+          <div class="form-group">
+            <label for="reg-email">Email</label>
+            <input type="email" id="reg-email" required />
+          </div>
+          <div class="form-group">
+            <label for="reg-password">Şifrə</label>
+            <input type="password" id="reg-password" required />
+          </div>
+          <button type="submit" class="btn">Qeydiyyat</button>
+        </form>
+        <div class="form-footer">
+          <p>Hesabınız var? <a href="#" id="login-link">Daxil olun</a></p>
+        </div>
+      </div>
+    </div>
+
+    <section class="hero" id="home">
+      <div class="container">
+        <h2>Yeni və işlənmiş maşınlar</h2>
+        <p>Üstün keyfiyyətli maşınlar ən yaxşı qiymətlərlə</p>
+        <a href="#featured-cars" class="btn">Bütün elanlar</a>
+      </div>
+    </section>
+
+    <section class="search-section">
+      <div class="container">
+        <div class="search-box">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Maşın markası və ya modeli axtar..."
+          />
+          <button id="search-btn"><i class="fas fa-search"></i> Axtar</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="brands" id="brands">
+      <div class="container">
+        <h2>Populyar Markalar</h2>
+        <div class="brands-grid">
+          <!-- JavaScript ilə doldurulacaq -->
+        </div>
+      </div>
+    </section>
+
+    <section class="featured-cars" id="featured-cars">
+      <div class="container">
+        <h2>Önə Çıxan Elanlar</h2>
+        <div class="cars-grid" id="featured-cars-grid">
+          <!-- JavaScript ilə doldurulacaq -->
+        </div>
+      </div>
+    </section>
+
+    <section class="search-results" id="search-results">
+      <div class="container">
+        <h2>Axtarış Nəticələri</h2>
+        <div class="results-grid" id="results-container">
+          <!-- JavaScript ilə doldurulacaq -->
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <h2>Əlaqə</h2>
+        <div class="contact-content">
+          <div class="contact-info">
+            <p><i class="fas fa-map-marker-alt"></i> Bakı, Azərbaycan</p>
+            <p><i class="fas fa-phone"></i> +994 12 345 67 89</p>
+            <p><i class="fas fa-envelope"></i> info@avtoelan.az</p>
+          </div>
+          <div class="contact-form">
+            <form>
+              <div class="form-group">
+                <input type="text" placeholder="Adınız" />
+              </div>
+              <div class="form-group">
+                <input type="email" placeholder="Email" />
+              </div>
+              <div class="form-group">
+                <textarea placeholder="Mesajınız"></textarea>
+              </div>
+              <button type="submit" class="btn">Göndər</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>AvtoElan</h3>
+            <p>
+              Ən yaxşı maşın təklifləri bir yerdə. Yeni və işlənmiş maşınlar
+              üçün ən etibarlı platforma.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h3>Keçidlər</h3>
+            <ul>
+              <li><a href="#home">Əsas səhifə</a></li>
+              <li><a href="#brands">Markalar</a></li>
+              <li><a href="#featured-cars">Elanlar</a></li>
+              <li><a href="#contact">Əlaqə</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Əlaqə</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Bakı, Azərbaycan</p>
+            <p><i class="fas fa-phone"></i> +994 12 345 67 89</p>
+            <p><i class="fas fa-envelope"></i> info@avtoelan.az</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 AvtoElan. Bütün hüquqlar qorunur.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
